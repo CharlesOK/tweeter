@@ -1,0 +1,17 @@
+
+// Character counting function
+$(document).ready(function() {
+  $('.new-tweet textarea').on('input', function() {
+    var maxCharacters = 140;
+    var character = $(this).val().length;
+    $(this).parent().find('.counter').text(maxCharacters - character);
+    if(maxCharacters - character < 0) {
+      $('.counter').addClass('redText');
+
+    }else {
+      $('.counter').removeClass('redText');
+    }
+
+
+  });
+});
