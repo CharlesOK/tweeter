@@ -21,3 +21,17 @@ nav#nav-bar > img.logo {
   font-size: 30px;
   line-height: 40px;
 }
+
+
+#nav-bar .compose {
+  float: right;
+  margin-top: 9px;
+  border-radius: 5px;
+  padding: 20px;
+  transition-duration: 0.4s;
+}
+
+.compose:hover {
+background-color: #4CAF50;
+
+}
