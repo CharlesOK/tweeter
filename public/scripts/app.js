@@ -13,26 +13,26 @@ function createTweetElement(tweetData) {
   .addClass('tweet-header')
   .appendTo($tweet);
 
-  const $div = $('<div>')
+  $div = $('<div>')
   .addClass('clearfix')
   .appendTo($header);
 
-  const $img = $('<img>')
+  $img = $('<img>')
   .addClass('photo')
   .attr('src', tweetData.user.avatars.small )
   .appendTo($div);
 
-  const $span = $('<span>')
+  $span = $('<span>')
   .addClass('name')
   .text(tweetData.user.name)
   .appendTo($img);
 
-  const $span = $('<span>')
+  $span = $('<span>')
   .addClass('user')
   .text(tweetData.user.handle)
   .appendTo($img);
 
-  const $p = $('<p>')
+  $p = $('<p>')
   .addClass('text')
   .text(tweetData.content.text)
   .appendTo($tweet);
@@ -41,19 +41,19 @@ function createTweetElement(tweetData) {
   .addClass('tweet-footer')
   .appendTo($tweet);
 
-  const $span = $('<span>')
+  $span = $('<span>')
   .addClass('icons')
-  .appendTo($tweet);
+  .appendTo($footer);
 
-  const $i = $('<i>')
+  $i = $('<i>')
   .addClass('fas fa-flag')
   .appendTo($span);
 
-  const $i = $('<i>')
+  $i = $('<i>')
   .addClass('fas fa-retweet')
   .appendTo($span);
 
-  const $i = $('<i>')
+  $i = $('<i>')
   .addClass('fas fa-heart')
   .appendTo($span);
 
@@ -76,4 +76,28 @@ function tweetsLoad() {
     }
   });
 }
+$(document).ready(function(){
+  tweetsLoad();
+  $(".compose").on('click', function() {
+    $('.new-tweet').toggle();
+  });
+  $('#form-submission').on('submit', function(event) {
+    event.preventDefault();
+    let textArea = $('.text-field');
+    if(textArea.val() === "" || textArea.val() === null) {
+      alert("You need to write some text in textfield!");
+    }else if(textArea.val().length > 140) {
+      alert("Your tweet is too long");
+    }else {
+      $.ajax({
+        url: "/tweets",
+        type: "POST",
+        data: $(this).serialize(),
+        success: function() {
+          tweetsLoad();
+        }
+      });
+    }
+  });
+});
 
