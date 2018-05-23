@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Function that appends the tweet data to the article
 function createTweetElement(tweetData) {
   const $tweet = $('<article>')
   .addClass('tweet');
@@ -59,8 +60,10 @@ function createTweetElement(tweetData) {
   return $tweet;
 }
 
+// Function which renders the tweets
 function renderTweets(tweets) {
   tweets.forEach(function (singleTweet) {
     $('#tweet-list').prepend(createTweetElement(singleTweet));
   });
 }
+
