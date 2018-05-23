@@ -67,3 +67,13 @@ function renderTweets(tweets) {
   });
 }
 
+function tweetsLoad() {
+  $.ajax({
+    url: "/tweets",
+    type: "GET",
+    success: function(data) {
+      renderTweets(data);
+    }
+  });
+}
+
