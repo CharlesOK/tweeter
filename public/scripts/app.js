@@ -78,7 +78,8 @@ function tweetsLoad() {
 }
 $(document).ready(function(){
   tweetsLoad();
-  $(".compose").on('click', function() {
+  $('.new-tweet').hide();
+  $('.compose').on('click', function() {
     $('.new-tweet').toggle();
   });
   $('#form-submission').on('submit', function(event) {
