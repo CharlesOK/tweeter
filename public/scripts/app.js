@@ -81,6 +81,7 @@ $(document).ready(function(){
   $('.new-tweet').hide();
   $('.compose').on('click', function() {
     $('.new-tweet').toggle();
+    $('textarea').focus();
   });
   $('#form-submission').on('submit', function(event) {
     event.preventDefault();
