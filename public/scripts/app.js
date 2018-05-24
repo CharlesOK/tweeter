@@ -25,12 +25,12 @@ function createTweetElement(tweetData) {
   $span = $('<span>')
   .addClass('name')
   .text(tweetData.user.name)
-  .appendTo($img);
+  .appendTo($header);
 
   $span = $('<span>')
   .addClass('user')
   .text(tweetData.user.handle)
-  .appendTo($img);
+  .appendTo($header);
 
   $p = $('<p>')
   .addClass('text')
@@ -82,7 +82,7 @@ $(document).ready(function(){
   $('.compose').on('click', function() {
     $('.new-tweet').toggle();
     $('textarea').focus();
-  });
+     });
   $('#form-submission').on('submit', function(event) {
     event.preventDefault();
     let textArea = $('.text-field');
@@ -96,6 +96,7 @@ $(document).ready(function(){
         type: "POST",
         data: $(this).serialize(),
         success: function() {
+           $('textarea').val("");
           tweetsLoad();
         }
       });
