@@ -5,6 +5,7 @@
   height: 80px;
   width: 100%;
   padding: 0px 2em 0px 2em;
+  z-index: 10px;
 
 }
 
