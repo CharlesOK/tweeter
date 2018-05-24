@@ -6,6 +6,11 @@
 
 // Function that appends the tweet data to the article
 function createTweetElement(tweetData) {
+var currentDate = new Date();
+var day = currentDate.getDate();
+var month = currentDate.getMonth() + 1;
+var year = currentDate.getFullYear();
+
   const $tweet = $('<article>')
   .addClass('tweet');
 
@@ -25,12 +30,12 @@ function createTweetElement(tweetData) {
   $span = $('<span>')
   .addClass('name')
   .text(tweetData.user.name)
-  .appendTo($header);
+  .appendTo($div);
 
   $span = $('<span>')
   .addClass('user')
   .text(tweetData.user.handle)
-  .appendTo($header);
+  .appendTo($div);
 
   $p = $('<p>')
   .addClass('text')
