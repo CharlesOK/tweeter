@@ -35,7 +35,7 @@ var year = currentDate.getFullYear();
   $span = $('<span>')
   .addClass('user')
   .text(tweetData.user.handle)
-  .appendTo($div);
+  .appendTo($div );
 
   $p = $('<p>')
   .addClass('text')
