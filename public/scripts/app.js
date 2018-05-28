@@ -6,9 +6,6 @@
 
 // Function that appends the tweet data to the article
 function createTweetElement(tweetData) {
-  var d = new Date();
-  var seconds = Math.round(d.getTime() / 1000);
-
   const $tweet = $('<article>')
   .addClass('tweet');
 
@@ -63,6 +60,36 @@ function createTweetElement(tweetData) {
 
   return $tweet;
 }
+
+
+// Date and Time funciton
+function newTime(timestamp) {
+  var currentTime = Date.now();
+  var postTime = timestamp;
+  var realTime = currentTime - postTime;
+  Math.floor(realTime / 1000 / 60 / 60 / 24 / 365);
+  if(Math.floor(realTime / 1000 / 60 / 60 / 24 / 365 ) > 0) {
+    return Math.floor(realTime / 1000 / 60 / 60 / 24 / 365 ) + " years ago";
+  } else if (Math.floor(realTime / 1000 / 60 /  60 / 24 / 30.416666) > 0) {
+    return Math.floor(realTime / 1000 / 60 /  60 / 24 / 30.416666) + " months ago";
+  } else if (Math.floor(realTime / 1000 / 60 /  60 / 24 ) > 0) {
+    return Math.floor(realTime / 1000 / 60 /  60 / 24) + " days ago";
+  } else if (Math.floor(realTime / 1000 / 60 /  60 ) > 0) {
+    return Math.floor(realTime / 1000 / 60 /  60) + " hours ago";
+  } else if(Math.floor(realTime / 1000 / 60) > 0) {
+    return Math.floor(realTime / 1000 / 60) + " minutes ago";
+  } else if (Math.floor(realTime / 1000) > 0) {
+    return Math.floor(realTime / 1000) + " seconds ago";
+  } else {
+    return "Just now";
+  }
+}
+
+
+
+
+
+
 
 // Function which renders the tweets
 function renderTweets(tweets) {

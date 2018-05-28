@@ -26,7 +26,6 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   //if(err) throw err;
 
   console.log(`Connected to mongdb: ${MONGODB_URI}`);
-  console.log(db);
   let createDataHelpers = require("./lib/data-helpers.js");
   const DataHelpers = createDataHelpers(db);
 
