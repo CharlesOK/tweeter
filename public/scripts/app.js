@@ -86,7 +86,7 @@ $(document).ready(function(){
   $('.compose').on('click', function() {
     $('.new-tweet').toggle();
     $('textarea').focus();
-     });
+  });
   $('#form-submission').on('submit', function(event) {
     event.preventDefault();
     let textArea = $('.text-field');
@@ -100,10 +100,10 @@ $(document).ready(function(){
         type: "POST",
         data: $(this).serialize(),
         success: function() {
-           $('textarea').val("");
-          tweetsLoad();
-        }
-      });
+         $('textarea').val("");
+         tweetsLoad();
+       }
+     });
     }
   });
 });
