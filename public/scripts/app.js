@@ -39,7 +39,7 @@ function createTweetElement(tweetData) {
 
   const $footer = $('<footer>')
   .addClass('tweet-footer')
-  .text(seconds)
+  .text(newTime(tweetData.created_at))
   .appendTo($tweet);
 
   $span = $('<span>')
