@@ -11,11 +11,11 @@ That allows users compose and post their tweets for the world to see.
 
 ## Dependencies
 
-*Express
-*Body-parser
-*Chance
-*Md5
-*Mongodb
+* Express
+* Body-parser
+* Chance
+* Md5
+* Mongodb
 
 ## Dev- Dependecies
-*Nodemon
+* Nodemon
