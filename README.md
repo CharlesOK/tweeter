@@ -19,3 +19,11 @@ That allows users compose and post their tweets for the world to see.
 
 ## Dev- Dependecies
 * Nodemon
+
+
+## Screenshots
+* !["screenshot of github repo homepage"]: ("https://github.com/RadiophonicOddity09/tweeter/blob/master/docs/github%20homepage.png")
+
+* !["screenshot of bird.png"]: ("https://github.com/RadiophonicOddity09/tweeter/blob/master/docs/bird.png")
+
+* !["screenshot of public directory"]: ("https://github.com/RadiophonicOddity09/tweeter/blob/master/docs/public.png")
